@@ -10,7 +10,7 @@ next:
   path: /docs/cookbook/testing/widget/introduction
 ---
 
-<?code-excerpt path-base="../null_safety_examples/cookbook/testing/unit/mocking"?>
+<?code-excerpt path-base="cookbook/testing/unit/mocking"?>
 
 Sometimes, unit tests might depend on classes that fetch data from live
 web services or databases. This is inconvenient for a few reasons:
@@ -119,20 +119,16 @@ and return different http responses in each test.
 The generated mocks will be located in `fetch_album_test.mocks.dart`.
 Import this file to use them.
 
-<?code-excerpt "test/fetch_album_test.dart (mockClient)"?>
+<?code-excerpt "test/fetch_album_test.dart (mockClient)" plaster="none"?>
 ```dart
-import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-
-import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
 @GenerateMocks([http.Client])
 void main() {
+}
 ```
 
 Next, generate the mocks running the following command:
@@ -158,9 +154,9 @@ Mockito:
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 
@@ -305,9 +301,9 @@ class _MyAppState extends State<MyApp> {
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:mocking/main.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:mocking/main.dart';
 
 import 'fetch_album_test.mocks.dart';
 
